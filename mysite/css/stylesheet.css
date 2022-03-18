@@ -1,0 +1,401 @@
+/*---------------------------
+Base styles for all screen widths
+----------------------------*/
+* {box-sizing: border-box;}
+/*sections------------------------------------------------------------------- */
+body { /*All the*/
+    background-color: #F0F0F0;
+    background-image: 
+        url(images/gradbackground.jpg);
+        background-repeat: repeat;
+        background-attachment: fixed;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 20px;
+}
+#wrapper { /*wrapper is used to make a webpage's width reactive to the size of the browser's window*/
+    max-width: auto; /*The max width responds automatically to screen size*/
+    margin-right: auto; /*The right margin moves with the screen size*/
+    margin-left: auto; /*The left margin moves with the screen size*/
+    background-color: #FFF; /*Background is the hexidecimal value for white hue*/
+    padding-right: 10px; /*10 pixel right margin to add some space*/
+    padding-left: 10px; /*10 pixel left margin to add some space*/
+}
+main  {
+}
+article{
+}
+.multi { 
+    column-count: 2;
+    column-width: 20em;
+    column-gap:1.5em;
+    padding: 1em 2em 1em 0;
+}
+/*Makes the heading span both columns*/ 
+article h2	{
+    color: #900;
+    column-span: all; /*col-span property is not supported by FireFox Grrrr*/
+}   
+aside	{
+}
+footer {
+}
+header {
+}
+.post	{
+}
+nav	{
+}
+.menu	{
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap; /*the cards and their content will wrap around the react dynamically to changing screen sizes*/
+}
+.card {
+    display: flex; 
+}
+.card-content { /*This is the format of card content defined*/
+    flex-direction: column;
+    width: 100%; /*The card content uses all of the avaliable width within the card*/
+    border: 1px solid #b8860b; /*This is how thick it is and what colour the border is*/
+    border-top-left-radius: 10px; /*Thickness of top left border*/
+    border-top-right-radius: 10px; /*Thickness of top right border*/
+    margin: 1.25em 1.25em 0.3em 0; /*Thickness of margins*/
+    padding: 1em; /*the card content will have a 1em space*/
+}
+
+/*640 px - tablet portrait orientation - 2 columns*/
+@media screen and (min-width: 40em){
+  .card { width: 50%; }
+}
+/*960 px* - tablet landscape orientation and above - 3 columns*/
+@media screen and (min-width: 60em) {
+  .card { width: 33.33%; }
+}
+/*headings------------------------------------------------------------------- */
+h1  {
+    font-family: font-family: Arial, Helvetica, sans-serif; /*This is a predetermined set of fonts the h1 element*/
+    color: #A8DEFF; /*h1 font colour is defined by a hexadecimal value*/
+    font-size: 36px; /*h1 font size is a quite large 36 pixels*/
+    line-height: 50px; /*The line that is the h1 element will be 50 pixels high*/
+}
+h2	{
+}
+h3 	{ /*Any "h3" element uses the formatting defined below*/
+    font-family: 'Strait', sans-serif; /**/
+    font-size: 1.5em;
+    line-height: 1.7em;
+}
+/*grouping------------------------------------------------------------------- */
+p	{
+    font-size:1.25rem;
+    line-height: 1.5;
+    margin: 10px 0 10px 0;
+    text-indent: 2em;
+    text-align: left;
+}
+p.dropcap:first-letter	{
+    float: left;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color:#F00;
+    font-size: 2.5em;
+    line-height: 0.2;
+    margin: 8px 5px 0 0;    
+}
+blockquote	{
+}
+/*lists---------------------------------------------------------------------- */
+ul	{
+}/*Empty entry means the element will use any other relevant entries for other elements such as "p" or "text"*/
+li	{
+}
+ol	{
+}
+dl	{
+}
+dt	{
+}
+dd	{
+}
+/*text------------------------------------------------------------------------ */
+em	{
+}
+strong	{
+}
+small	{
+}
+cite	{
+}
+time	{
+}
+/*image----------------------------------------------------------------------- */
+figure	{
+}
+figcaption	{
+}
+.banner-clipped { /*The formatting below is for any element labelled "banner-clipped"*/
+    overflow: hidden; /*Any content that "overflows" from the element's block format will be hidden, hence the name of the class "banner-clipped" as the content is clipped short*/
+}
+.banner-fluid {
+    width: 100%; /*Any element that has this class will always be the actual width of your image*/
+    max-width: 1024px; /*max-width measurement, the image can't be wider than 1024 pixels*/
+}
+img	{
+    max-width: 100%; /*This line ensures that an image isn't stretched beyond it's own native aspect ratio, this is to prevent the image stretching horizontially*/
+}
+.fltlt { /*This "fltlt" class can be added to any element to implement the formating below*/
+    float: left; /*This line makes the element "float" to the left side, which mean the content sticks to the left side, hence the name "fltlt"*/
+    margin-right: 8px; /*There is a 8 pixel wide margin on the right side of the element, this is to stop clipping with other elements*/
+}
+.clear { /*This "clear" class can be added to any element to implement the formatting below*/
+    clear: both; /*This line indicates that any element with this class is moved below any "floated" elements nearby regardless of whether it is an element that has the class "fltrt" or "fltlt"*/
+}
+.fltrt { /*This "fltrt" class can be dynamically be added to any element to easily add the formatting below*/
+    float: right; /*This line makes the element "float" to the right side, which means the content sticks to the right side, hence the name "fltrt"*/
+    margin-left: 8px; /*There is a 8 pixel wide margin on the left side of the element, this is to stop clipping with other elements*/
+}
+/*anchors--------------------------------------------------------------------- */
+a:link, a:visited, a:active	{ /*If the browser detects that the "a" element contains a link that has been either currently active or has already been visited, the "a" element will use the formatting below*/
+	color: #0090D2; /*The colour of the content will be another lighter shade of blue as defined by a hexidecimal value*/
+}
+a:hover { /*If the browser detects the cursor is "hovering" over the "a" element,the "a" element will use the formatting below*/
+    color: #0063A6; /*The content will be a dark shade of blue as defined by a hexidecimal value*/
+    text-decoration: none; /*This line removes any decoration formatting inherited before the cursor is detected*/
+}
+.menu li	{ /*Any "li" element of the "menu" class will use the formatting below*/
+    list-style-type: none; /*This line ensures that the list doesn't inherit any formatting from sources other than this stylesheet*/
+    font-size: 18px; /*If the content is text, the text will have font that is 18 pixels high*/
+    margin-left: 0px; /*This line ensures that there is no inherited margin on the left of the content*/
+    margin-bottom: 20px; /*The content will have a 20 pixel wide margin below, to give each element space*/
+}
+.menu a { /*Any "a" element of the "menu" class will use the formatting below*/
+	color: #000; /*The colour fo the content will be black as defined by a hexidecimal values*/
+	padding: 5px; /*The content will be surrounded by a 5 pixel wide space*/
+	margin-right: 4px; /*The content will have a 4 pixel wide margin on the right of the content to further pad the layout*/
+	text-decoration: none; /*This line removes any default formatting from the user or other external sources other than the stylesheet*/
+	border: 2px solid #0090D2; /*The content is surrounded by a visible 2 pixel wide solid black border. The colour is defined by the hexidecimal value, the "solid" label makes the border a single colour, the "2px" value means 2 pixels*/
+	border-radius: 3px; /*The border used above has an actual physical radius of 3 pixels to stop the content clipping into the physical border*/
+}
+.menu a:hover { /*Any "a" element of the "menu" class will change to this formatting if the user hovers the cursor over the element's content*/
+	background-color: #0090D2; /*The background will change to a hue of blue as defined by a hexidecimal value*/
+	color: #FFF; /*The colour of the content will change to an off-white colour as defined by a hexidecimal value*/
+}
+.post	{
+	margin-top: 2px; /*Any elements with the "post" class will have a 2 pixels wide margin along the top edge of the content*/
+	margin-bottom: 2px; /*Any elements with the "post" class will have a 2 pixel wide margin on the bottom of the content*/
+	background-color: #CCC; /*Any elements with the "post" class will be a shade of a grey which is defined by a hexidecimal value*/
+}
+/*table--------------------------------------------------------------------- */
+table, th, td { /*The formatting below is for the "table", "th" and "td" elements*/
+    text-align: left; /*The text will be alined along the leftside of the table etc*/
+    height: 50px; /*The content will be 50 pixels high*/
+    vertical-align: bottom; /*The text will be alined along the bottom of the table etc*/
+    width: auto; /*the table will change width with the screen size*/
+}
+th, td {
+    padding: 15px; /*The "th" and "td" elements of the table have 15 pixels of padding added to them*/
+}
+tr:hover {
+    background-color: #f5f5f5; /*If the "tr" element is detected to have a cursor "hovering" over the content, it will change to an off-white colour as defined by an hexidecimal code*/
+}
+th {
+    background-color: #4CAF50; /*The table element of "th" is defined to have a background colour of a hue of green, which is defined by a hecidecimal value*/
+    color: white; /*The "th" element will have content be coloured an off-white colour that is defined by an hexidecimal value*/
+}
+/* -----------------------
+Grid layout
+------------------------*/
+.banner {
+	grid-area: banner; /*Defines that the "banner" class takes the label of "banner" in reference to grid area*/
+}
+.menu {
+	grid-area: menu; /*Defines that the "menu" class is labelled as "menu" in reference to grid area*/
+}
+nav {
+	grid-area: nav; /*Any "nav" class will be labelled with the same name "nav" in refernce of grid area layout*/
+}
+table {
+	grid-area: table; /*Any "table" class is labelled as "table" in reference to grid layout*/
+}
+main {
+	grid-area: main; /*Any "main" class will be labelled as "main" in reference to grid area layout*/
+}
+aside {
+	grid-area: aside; /*Any "aside" class elements will be labelled as "aside" in reference to grid area layout*/
+}
+footer {
+	grid-area: footer; /*Any "footer" class elements will be labelled as "footer" in reference to grid area layout*/
+}
+#wrapper { /*All of the webpage's classes that are affected by the responsive wrapper*/
+	display: grid;
+	grid-gap: 0;
+	grid-template-areas:
+		"banner"
+		"menu"
+		"nav"
+		"table"
+		"main"
+		"aside"
+		"footer";
+}
+@media (min-width: 50em) { /*Any attached media that is at least 50em wide uses the layout defined below*/
+  #wrapper {
+    grid-template-columns: 3fr 6fr;
+    grid-template-areas: 
+      "banner  banner"
+      "menu  menu"
+	  "nav  table"
+      "aside  main"
+      "footer  footer";
+  }
+}
+@media (min-width: 60em) { /*Any attached elements that is at least 60em wide uses the layout defined below*/
+  #wrapper {
+    grid-template-columns: 2fr auto 3fr;
+    grid-template-areas: 
+      "banner  banner  banner"
+      "menu  menu  menu"
+	  "nav  table  aside"
+      "nav  main  aside"
+      "footer  footer  footer";
+   }
+}
+/* --------------------------
+Layout Styles - mobile first
+----------------------------*/
+.banner
+{
+	color: #fff; /*Any element with the "banner" class is defined to have an off-white colour as defined by an hexidecimal value*/
+	background: #555; /*Any element with the "banner" class will have a dark shade of grey as a background, the colour is defined by a hexidecimal value*/
+	padding: 1em 0 1em 1.25em; /*Any element with the "banner" class will be padded by 1em margins along the left/right edges, a 1.25em margin along the bottom edge and no padding on the top edge.*/
+}
+
+.menu
+{
+	background: #000 ; /*The background any element with the "menu" class will be a very dark shade of grey, as defined by a hexidecimal value*/
+	padding: 0; /*Any element under the "menu" class will have no default padding inherited from sources other than the stylesheet, such as the user settings or browser formatting*/
+	text-transform: uppercase; /*Any text or "strings" in the menu element will be changed to uppercase*/
+	font-weight: bold; /*The font of any text will be made BOLD*/
+}
+
+nav h3, aside h3 {
+	margin-left: .6em; /*The "h3" element for both the "nav" and "aside" classes will have a 0.6em margin along the left edge*/
+}
+
+main
+{
+	margin: 0 1em 0 1em; /*The "main" element has no margins for the left/right edges but has 1em margins for the top/bottom edges*/
+}
+
+footer
+{
+	color: #fff; /*The footer content would be coloured a white shade*/
+	background: #555; /*The background will be a darker shade of grey*/
+	padding: 1em 1.25em 1em 1.25em; /*The footer content will be padded by a 1em margin for the left/right and a 1.25em margin for the top/bottom edges*/
+}
+
+/**Makes images 100% width of containing element i.e. flexible
+*Remove image width and height attributes from html!
+*/
+img	
+{
+	max-width: 100%; /*Any img element will have a max-width fo 100% of the image resolution*/
+}
+.video-wrapper { /*This is the class that lets videos dynamically adjust to screen size*/
+    max-width: 960px; /*The max width is 960 pixels to stop video elements from taking up too much space*/
+    margin: 0 auto; /*This line defines that any video element has no margin on the sides and the vertical margin that dynamically adjust to video and/or screen size*/
+}
+iframe	{
+    width: 100%; /*If an element has this class will always be displayed at %100 of it's width regardless of screen size*/
+    height: auto; /*The height is auto so the video can be displayed at the aspect ratio*/
+}
+.video-container {
+    position: relative; /*The element will be position in relation to the nearest different element, to the right*/
+    padding-bottom: 56.25%; /*This padding forces a video to have a 16:9 aspect video*/
+    height: 0; /*This removes any default height ratio*/
+}
+.video-container iframe {
+    position: absolute; /*The video element cannot change position relative to other content*/
+    top: 0; left: 0; right: 0; bottom: 0; /*The video element has no borders*/
+    width: 100%; /*Native width is kept and is prioritised over any other formatting*/
+    height: 100%; /*Native height is kept and is priortised over any other formatting*/
+}
+
+/* -----------------------------------------------
+Menu Navigation - vertical layout for smaller screens
+--------------------------------------------------*/
+.menu ul /*This is formatting for the "ul" elements of the "menu" class*/
+{
+	margin: 0; /*This line defines that there's no default margins inherited*/
+	padding: 0; /*The line defines that there's no default padding inherited*/
+	list-style: none; /*This line defines that there's no default list-style inherited*/
+}
+.menu li /*This defines that the settings below are for formatting the "li" element of the "menu" class*/
+{
+	display: block; /*Content is displayed in a vertical column or square "block" format*/
+	margin: 0; /*This line defines that there's no default margins inherited*/
+}
+.menu a /*This defines that the settings below are for formatting the "a" element of the "menu" class*/
+{
+	display: block; /*The content will be displayed as a "block" or in laymen's terms, the content is grouped together in a rectangle formation*/
+	padding: .7em 1.25em .7em 1.25em; /*The element will be padded by a 7em on the left/right edge and 1.25em along the top/botttom edge*/
+	color: #fff; /*The content will be coloured an off-white colour defined by hexidecimal code*/
+	text-decoration: none; /*This line defines that there will be no default text decoration inherited from external sources*/
+	border-bottom: 1px solid gray; /*The bottom border will be a solid gray line that will be a pixel wide*/
+}
+.menu a:link { color: #fff; } /*Any "a" element that is under the "menu" class, which is also detected as a link will be coloured an off-white*/
+.menu a:visited { color: #DFDFDF; }/*Any "a" element that is of the "menu" class, if the element is "visited" it will change to a shade of grey, colour is defined by hexadecimal values*/
+.menu a:focus { color: #C00; } /*Any "a" element that is under the "menu" class, if the browser detects that the user is "focusing" on the element, it will change the content to a burgundy colour*/
+.menu a:hover { color: #DFDFDF; } /*Any "a" element that is under the "menu" class, if the browser detects that the user is "hovering" their cursor on the element, it will change the content to a grey colour*/
+.menu a:active { color: #C00; } /*Any "a" element that is under the "menu" class, if the browser detects that the user is on the relevant webpage, it will change the content to a burgundy colour*/
+
+/* ----------------------------------------------------
+Wider screens - i.e. desktop, laptop, tablet landscape
+-------------------------------------------------------*/
+
+@media (min-width: 50em) /*These settings are not used if the screen is less than 50em wide*/
+{
+	.banner { padding: 0 0 0 3em; } /*This line defines that any element with the "banner" class will have no padding on the left/right and along the top edge but a 3em along the bottom edge*/
+	
+/* Menu navigation - inline layout for wider screens */	
+	
+	.menu { padding: 1em 0 1em 3em; } /*Any element that uses the "menu" class will have padding of 1em for the left/right edge, 3em padding for the bottom edge and no padding for the top edge*/
+
+	.menu li /*Any "li" element that has the "menu" class will use this formatting*/
+	{
+		display: inline; /*The content is moved to the side of the scren to make use of the wider window*/
+		margin: 0 1em 0 0; /*This line defines that only the top edge has a margin that is 1em wide*/
+	}
+	.menu a /*Any "a" elements of the "menu" class will use the formatting below*/
+	{
+		display: inline; /*The displayed content is pushed to the inline of the screen to make use of the wider window*/
+		padding: 0; /*This is to remove any default padding from users or browsers*/
+		border-bottom: 0; /*This will remove any default borders*/
+	}
+}
+
+/* ----------------------------------------------------
+Mobile screens - portrait
+-------------------------------------------------------*/
+/*Timetable not displayed on small width screens*/
+
+@media (max-width: 35em) { /*Any screen that is wider than 35em will not use these settings*/
+	table {
+		display:none; /*The "table" element is defined to "not be displayed"*/
+   }
+}
+
+/*float/clear classes */
+.fltrt {  /* this class can be used to float an element e.g. image right in the page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: .5em;
+}
+.fltlt { /* this class can be used to float an element e.g. image left in the page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: .5em;
+}
+.clear { /* this class can be placed on an element or empty div as the final element following the last floated div */
+	clear: both;
+}

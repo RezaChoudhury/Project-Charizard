@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fake property listing</title>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.1/css/all.css" type="text/css">
+        <script src="https://kit.fontawesome.com/355bb21480.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+
+    <body>
+<!--         <nav class="navbar">
+            <div class="logo">Property</div>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="index.php">Search</a></li>
+                    <li><a href="index.php">Contact us</a></li>
+                    <li><a href="list.php">List</a></li>
+                    <li><a href="index.php">Login</a></li>
+                    <li><a href="index.php">Register</a></li>
+                </ul>
+            </div>
+        </nav> -->
+        
+        <div class="nav">
+            <div class="navLeft">Logo</div>
+            <div class="navCenter">
+                <a href="#">Center links</a>
+                <a href="#">Center links</a>
+                <a href="#">Center links</a>
+            </div>
+            <div class="navRight">
+                <button id="myBtn">
+                     <span class="pill-primary" style="font-size: 1rem;">Login</span>
+                </button>
+            </div>
+        </div>
+        <main>
+            <div class="mainWrapper">
+                <div class="search leftAnim">
+                    <span>Location</span>
+                    <input type="text" name="search" placeholder="Where are you going?">
+                    <span>Min price</span>
+                    <select name="minPrice" id="minPrice" value="0">
+                        <option value="0">No min</option>
+                        <option value="1">1+</option>
+                        <option value="2" >2+</option>
+                        <option value="3" >3+</option>
+                        <option value="4" >4+</option>
+                        <option value="5" >5+</option>
+                    </select>
+                    <span>Max price</span>
+                    <select name="maxPrice" id="maxPrice" value="0">
+                        <option value="0">No min</option>
+                        <option value="1">1+</option>
+                        <option value="2" >2+</option>
+                        <option value="3" >3+</option>
+                        <option value="4" >4+</option>
+                        <option value="5" >5+</option>
+                    </select>
+                    <span>Beds</span>
+                    <select name="bedSearch" id="bedSearch" value="0">
+                        <option value="0">No min</option>
+                        <option value="1">1+</option>
+                        <option value="2" >2+</option>
+                        <option value="3" >3+</option>
+                        <option value="4" >4+</option>
+                        <option value="5" >5+</option>
+                    </select>
+                    <span>Baths</span>
+                    <select name="bathSearch" id="bathSearch" value="0">
+                        <option value="0">No min</option>
+                        <option value="1">1+</option>
+                        <option value="2" >2+</option>
+                        <option value="3" >3+</option>
+                        <option value="4" >4+</option>
+                        <option value="5" >5+</option>
+                    </select>
+                    <button type="submit" name="search"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
+                </div>
+                <div class="recent">
+                    <div class="listings">
+                        <a href="#">
+                            <div class="card downAnim">
+                                <div class="header"><img src="https://lid.zoocdn.com/u/1024/768/7d829215c5f08a08a113e26ebad28812d5adb8fe.jpg:p"></div>
+                                <div class="title">4 bedroom house</div>
+                                <div class="main">&pound;400</div>
+                                <div class="stat">
+                                    <span class="pill-primary"><i class="fas fa-bed"></i> 3</span>
+                                    <span class="pill-primary"><i class="fas fa-bath"></i> 3</span>
+                                    <span class="pill-secondary">Student friendly</span>
+                                </div>
+                                <div class="footer">19/04/2022</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="mainLeft leftAnim">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae consequatur animi, similique atque, eius blanditiis itaque quia rerum, enim alias explicabo error mollitia illum aperiam perspiciatis facilis quisquam voluptas qui!</div>
+                <div class="mainRight rightAnim"><img src="https://loveincorporated.blob.core.windows.net/contentimages/gallery/08afbe0f-350d-480d-9421-57274208714e-Black_forest_germany.jpg" style="width: 100%"></div>
+            </div>
+        </main>
+        <footer>Hello</footer>
+        <!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form role="form" method="post" action="">
+        <input type="text" name="loginUser" placeholder="Username/Email">
+        <input type="password" name="loginPassword" placeholder="Password">
+        <input type="submit" name="login" value="Login">
+    </form>
+    </div>
+  
+  </div>
+        <script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+        </script>
+    </body>
